@@ -1,0 +1,46 @@
+<%= form_for(@conf_room) do |f| %>
+  <% if @conf_room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@conf_room.errors.count, "error") %> prohibited this conf_room from being saved:</h2>
+
+      <ul>
+      <% @conf_room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :sq_feet %><br>
+    <%= f.number_field :sq_feet %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field has-success">
+    <%= f.label :pic, class: 'control-label'%><br>
+    <%= f.text_field :pic, class: 'form-control', style: 'max-width:500px' %><br>
+    <%= f.file_field :pic %>
+    <%= image_tag(@conf_room.pic_url) if @conf_room.pic? %>
+  </div>
+  <div>
+    <label>
+      <%= f.check_box :remove_pic! %>
+        Click to remove pic
+    </label>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

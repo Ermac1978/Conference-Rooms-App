@@ -1,0 +1,67 @@
+<h1>These are the Iron Yard Conference Rooms</h1>
+
+<h3>Search the Room Description here!</h3>
+<%= form_tag search_conf_rooms_path %>
+<%= text_field_tag "search_query", nil, placeholder: "Search Text" %>
+<%= submit_tag "Search", class: "btn btn-info" %><br>
+<br>
+<%= button_to "Reset", conf_rooms_path, class: "btn btn-warning" %>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Picture</th>
+      <th>Name<%= link_to conf_rooms_path(order_by: 'hero_name ASC') do %>
+            <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+        <% end %>
+      </th>
+      <th>Location<%= link_to conf_rooms_path(order_by: 'secret_identity DESC') do %>
+            <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+        <% end %>
+      </th>
+      <th>Sq feet<%= link_to conf_rooms_path(order_by: 'powers ASC') do %>
+            <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+        <% end %>
+      </th>
+      <th>Description<%= link_to conf_rooms_path(order_by: 'team DESC') do %>
+            <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+        <% end %>
+      </th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @conf_rooms.each do |conf_room| %>
+      <tr>
+        <td><%= image_tag conf_room.pic_url(:thumb) %>
+        <td><%= conf_room.name %></td>
+        <td><%= conf_room.location %></td>
+        <td><%= conf_room.sq_feet %></td>
+        <td><%= conf_room.description %></td>
+        <td><%= link_to new_conf_room_path do %>
+              <span class="glyphicon glyphicon-plus"></span> Add
+          <% end %>
+        </td>
+        <td><%= link_to conf_room do %>
+              <span class="glyphicon glyphicon-eye-open"></span> Show
+          <% end %>
+        </td>
+        <td><%= link_to edit_conf_room_path(conf_room) do %>
+              <span class="glyphicon glyphicon-edit"></span> Edit
+          <% end %>
+        </td>
+        <td><%= link_to conf_room, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-remove"></span> Delete
+          <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<center><%= link_to 'Create a new room', new_conf_room_path, class: 'btn btn-success' %></center>
+
+<br>
+<center><%= link_to "Sign Out", signout_path, method: :delete, class: 'btn btn-danger' %></center>
+

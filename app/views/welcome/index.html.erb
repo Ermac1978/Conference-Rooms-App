@@ -1,0 +1,21 @@
+<div class="jumbotron">
+  <h1 class="text-center">The Iron Yard Conference Rooms App<h1>
+    <p class="text-center">Find out about our conference rooms and schedule them for your own use!</p>
+</div>
+
+<% if current_user %>
+    <%= link_to "Sign Out", signout_path, method: :delete, class: 'btn btn-danger' %>
+<% else %>
+    <%= form_tag signin_path do %>
+        <%= text_field_tag "email", nil, placeholder: "Email" %>
+        <%= password_field_tag "password", nil, placeholder: "Password"%>
+        <%= submit_tag "Sign In" %>
+    <% end %>
+    <br>
+<%= link_to 'Click here to sign up!', signups_path, class: 'btn btn-success' %>
+
+
+
+
+
+<% end %>
