@@ -9,6 +9,7 @@
 #  updated_at      :datetime
 #  password_digest :string(255)
 #  role            :string(25)       default("student")
+#  campus_id       :integer
 #
 
 require 'test_helper'

@@ -9,8 +9,8 @@
 #  description :string(255)
 #  created_at  :datetime
 #  updated_at  :datetime
-#  user_id     :integer
 #  pic         :string(255)
+#  campus_id   :integer
 #
 
 require 'test_helper'

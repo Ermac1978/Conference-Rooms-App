@@ -9,16 +9,19 @@
 #  description :string(255)
 #  created_at  :datetime
 #  updated_at  :datetime
-#  user_id     :integer
 #  pic         :string(255)
+#  campus_id   :integer
 #
 
 class ConfRoom < ActiveRecord::Base
+
+  validates :name, presence: true
+  validates :campus_id, presence: true
+
 
   scope :for_user, ->(user) { where(user: user) }
 
   mount_uploader :pic, PicUploader
 
-  belongs_to :user
 
 end
