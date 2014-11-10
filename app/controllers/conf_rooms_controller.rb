@@ -82,6 +82,6 @@ class ConfRoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def conf_room_params
-      params.require(:conf_room).permit(:name, :location, :sq_feet, :description, :user_id, :pic)
+      params.require(:conf_room).permit(:name, :location, :sq_feet, :description, :user_id, :pic, :campus_id)
     end
 end

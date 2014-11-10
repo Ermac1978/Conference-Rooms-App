@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   end
 
   validates :name, presence: true
-  validates :campus_id, presence: true
+
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true,

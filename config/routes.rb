@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :features
+
   root 'welcome#index'
 
   resources :users

@@ -15,6 +15,6 @@ class SignupsController < ApplicationController
     else
       flash[:error] = "Sign up failed!"
     end
-    redirect_to tiy_rooms_index_path
+    redirect_to conf_rooms_path
   end
 end
