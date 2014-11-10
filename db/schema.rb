@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20141110153944) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
-    t.string   "role"
+    t.string   "role",            limit: 25, default: "student"
   end
 
 end
