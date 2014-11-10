@@ -7,7 +7,6 @@
 #  email           :string(255)
 #  created_at      :datetime
 #  updated_at      :datetime
-#  role            :string(25)       default("user")
 #  password_digest :string(255)
 #
 
@@ -17,7 +16,7 @@ class User < ActiveRecord::Base
   has_many :conf_rooms
 
   def admin?
-    self.role == 'admin'
+    self.role == 'staff'
   end
 
   validates :name, presence: true

@@ -7,7 +7,6 @@
 #  email           :string(255)
 #  created_at      :datetime
 #  updated_at      :datetime
-#  role            :string(25)       default("user")
 #  password_digest :string(255)
 #
 
