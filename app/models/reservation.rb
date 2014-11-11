@@ -20,5 +20,6 @@ class Reservation < ActiveRecord::Base
   validates :user_id, presence: true
   validates :conf_room_id, presence: true
 
-
+  belongs_to :user
+  belongs_to :conf_room
 end

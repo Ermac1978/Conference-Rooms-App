@@ -12,10 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :index %><br>
-    <%= f.text_field :index %>
+    <%= f.label :feature %><br>
+    <%= f.text_field :feat %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
+<center><%= link_to 'Go back to your rooms', conf_rooms_path, class: 'btn btn-success' %></center>

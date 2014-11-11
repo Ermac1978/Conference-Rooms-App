@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141110194646) do
+ActiveRecord::Schema.define(version: 20141111214320) do
 
   create_table "campus", force: true do |t|
     t.string   "name"
@@ -50,9 +50,9 @@ ActiveRecord::Schema.define(version: 20141110194646) do
   add_index "conference_room_features", ["feature_id"], name: "index_conference_room_features_on_feature_id"
 
   create_table "features", force: true do |t|
-    t.string   "index"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "feat"
   end
 
   create_table "reservations", force: true do |t|

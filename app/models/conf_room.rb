@@ -19,6 +19,8 @@ class ConfRoom < ActiveRecord::Base
   validates :campus_id, presence: true
 
   belongs_to :user
+  belongs_to :campus
+  has_many :reservations
   has_many :conference_room_features
   has_many :features, through: :conference_room_features
 

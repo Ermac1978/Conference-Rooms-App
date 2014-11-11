@@ -39,20 +39,20 @@
         <td><%= conf_room.location %></td>
         <td><%= conf_room.sq_feet %></td>
         <td><%= conf_room.description %></td>
-        <td><%= link_to new_conf_room_path do %>
-              <span class="glyphicon glyphicon-plus"></span> Add
+        <td><%= link_to new_feature_path do %>
+              <span class="glyphicon glyphicon-plus"></span> Add Features
           <% end %>
         </td>
         <td><%= link_to conf_room do %>
-              <span class="glyphicon glyphicon-eye-open"></span> Show
+              <span class="glyphicon glyphicon-eye-open"></span> Show Rooms
           <% end %>
         </td>
         <td><%= link_to edit_conf_room_path(conf_room) do %>
-              <span class="glyphicon glyphicon-edit"></span> Edit
+              <span class="glyphicon glyphicon-edit"></span> Edit Rooms
           <% end %>
         </td>
         <td><%= link_to conf_room, method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <span class="glyphicon glyphicon-remove"></span> Delete
+              <span class="glyphicon glyphicon-remove"></span> Delete Rooms
           <% end %>
       </tr>
     <% end %>
@@ -60,7 +60,7 @@
 </table>
 
 <br>
-<center><%= link_to 'Create a new room', new_conf_room_path, class: 'btn btn-success' %></center>
+<center><%= link_to 'Add a new room', new_conf_room_path, class: 'btn btn-success' %></center>
 
 <br>
 <center><%= link_to "Sign Out", signout_path, method: :delete, class: 'btn btn-danger' %></center>

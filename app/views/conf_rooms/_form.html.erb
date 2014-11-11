@@ -12,24 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :name, class: 'control-label' %><br>
+    <%= f.text_field :name, class: 'form-control', style: 'max-width:500px' %>
   </div>
   <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
+    <%= f.label :location, class: 'control-label' %><br>
+    <%= f.text_field :location, class: 'form-control', style: 'max-width:500px' %>
   </div>
   <div class="field">
-    <%= f.label :sq_feet %><br>
-    <%= f.number_field :sq_feet %>
+    <%= f.label :sq_feet, class: 'control-label' %><br>
+    <%= f.number_field :sq_feet, class: 'form-control', style: 'max-width:500px' %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.label :description, class: 'control-label' %><br>
+    <%= f.text_field :description, class: 'form-control', style: 'max-width:500px' %>
   </div>
   <div class="field">
-    <%= f.label :campus_id %><br>
-    <%= f.text_field :campus_id %>
+    <%= f.label :campus_id, class: 'control-label' %><br>
+    <%= f.text_field :campus_id, class: 'form-control', style: 'max-width:500px' %>
   </div>
   <div class="field has-success">
     <%= f.label :pic, class: 'control-label'%><br>
@@ -39,16 +39,17 @@
   </div>
   <div>
     <label>
-      <%= f.check_box :remove_pic! %>
+      <%= f.check_box :remove_pic %>
         Click to remove pic
     </label>
   </div>
-
-  <div class="form-group">
-    <%= f.label :user_id %>
-    <%= f.select :user_id, User.all.collect {|user| [user.name, user.id]}, class: 'form-control', placeholder: 'Enter user id' %>
+  <div class="field">
+      <%= hidden_field_tag "conf_room[feature_ids][]", nil %>
+      <% Feature.all.each do |feature| %>
+        <%= check_box_tag "conf_room[feature_ids][]", feature.id, @conf_room.feature_ids.include?(feature.id), id: dom_id(feature) %>
+        <%= label_tag dom_id(feature), feature.feat %><br>
+      <% end %>
   </div>
-
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -3,9 +3,9 @@
 # Table name: features
 #
 #  id         :integer          not null, primary key
-#  index      :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  feat       :string(255)
 #
 
 require 'test_helper'
