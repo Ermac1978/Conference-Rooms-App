@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-
+  resources :campuses
+  resources :reservations
+  resources :users
   resources :features
 
   root 'welcome#index'
 
-  resources :users
+
 
   resources :conf_rooms do
     collection do

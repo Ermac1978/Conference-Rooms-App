@@ -56,18 +56,12 @@ group :development do
 end
 
 gem 'annotate', '~> 2.6.5'
-
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
-
 gem 'faker', '~> 1.4.3'
-
 gem 'carrierwave'
-
 gem "mini_magick"
-
 gem "fog"
-
 gem 'kaminari'
-
 gem 'bcrypt', '~> 3.1.7'
+gem "letter_opener", :group => :development
