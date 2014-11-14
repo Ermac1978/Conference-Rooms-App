@@ -2,31 +2,19 @@
 
 <h3>Search the Room Description here!</h3>
 <%= form_tag search_conf_rooms_path %>
-<%= text_field_tag "search_query", nil, placeholder: "Search Text" %>
-<%= submit_tag "Search", class: "btn btn-info" %><br>
-<br>
+  <%= text_field_tag "search_query", nil, placeholder: "Search Text" %>
+  <%= submit_tag "Search", class: "btn btn-info" %><br>
+  <br>
 <%= button_to "Reset", conf_rooms_path, class: "btn btn-warning" %>
 
 <table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Picture</th>
-      <th>Name<%= link_to conf_rooms_path(order_by: 'hero_name ASC') do %>
-            <span class="glyphicon glyphicon-sort-by-alphabet"></span>
-        <% end %>
-      </th>
-      <th>Location<%= link_to conf_rooms_path(order_by: 'secret_identity DESC') do %>
-            <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
-        <% end %>
-      </th>
-      <th>Sq feet<%= link_to conf_rooms_path(order_by: 'powers ASC') do %>
-            <span class="glyphicon glyphicon-sort-by-alphabet"></span>
-        <% end %>
-      </th>
-      <th>Description<%= link_to conf_rooms_path(order_by: 'team DESC') do %>
-            <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
-        <% end %>
-      </th>
+      <th><%= link_to 'Name', conf_rooms_path(order_by: 'name ASC') %></th>
+      <th><%= link_to 'Location', conf_rooms_path(order_by: 'location ASC') %></th>
+      <th><%= link_to 'Square Feet', conf_rooms_path(order_by: 'sq_feet ASC') %></th>
+      <th><%= link_to 'Description', conf_rooms_path(order_by: 'description ASC') %></th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -41,19 +29,20 @@
         <td><%= conf_room.description %></td>
         <td><%= link_to new_feature_path do %>
               <span class="glyphicon glyphicon-plus"></span> Add Features
-          <% end %>
+            <% end %>
         </td>
         <td><%= link_to conf_room do %>
               <span class="glyphicon glyphicon-eye-open"></span> Show Rooms
-          <% end %>
+            <% end %>
         </td>
         <td><%= link_to edit_conf_room_path(conf_room) do %>
               <span class="glyphicon glyphicon-edit"></span> Edit Rooms
-          <% end %>
+            <% end %>
         </td>
         <td><%= link_to conf_room, method: :delete, data: { confirm: 'Are you sure?' } do %>
               <span class="glyphicon glyphicon-remove"></span> Delete Rooms
-          <% end %>
+            <% end %>
+         </td>
       </tr>
     <% end %>
   </tbody>

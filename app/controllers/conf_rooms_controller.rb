@@ -10,7 +10,7 @@ class ConfRoomsController < ApplicationController
   # GET /conf_rooms
   # GET /conf_rooms.json
   def index
-    @conf_rooms = ConfRoom.for_user(current_user)
+    @conf_rooms = ConfRoom.for_user(current_user).order(@order_by)
   end
 
   # GET /conf_rooms/1
@@ -77,7 +77,7 @@ class ConfRoomsController < ApplicationController
     end
 
     def set_order_by
-      @order_by = params[:order_by]  || "name DESC, location ASC, sq_feet DESC, description ASC"
+      @order_by = params[:order_by]  || "name DESC, location DESC, sq_feet DESC, description DESC"
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
