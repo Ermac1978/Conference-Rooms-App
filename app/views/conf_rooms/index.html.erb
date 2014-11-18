@@ -7,7 +7,9 @@
   <br>
 <%= button_to "Reset", conf_rooms_path, class: "btn btn-warning" %>
 
-<table class="table table-striped table-hover">
+
+<!--<table class="table table-striped table-hover">-->
+<table class="table">
   <thead>
     <tr>
       <th>Picture</th>
@@ -21,8 +23,25 @@
 
   <tbody>
     <% @conf_rooms.each do |conf_room| %>
-      <tr>
+      <tr id="rooms">
         <td><%= image_tag conf_room.pic_url(:thumb) %>
+          <div id="rooms">
+              <button> Click here to see more photos </button>
+              <ul class="photos">
+                <li>
+                  <img src="/assets/1.jpg">
+                  <span>Arc de Triomphe</span>
+                </li>
+                <li>
+                  <img src="/assets/1.jpg">
+                  <span>The Eiffel Tower</span>
+                </li>
+                <li>
+                  <img src="/assets/1.jpg">
+                  <span>Notre Dame de Paris</span>
+                </li>
+              </ul>
+          </div>
         <td><%= conf_room.name %></td>
         <td><%= conf_room.location %></td>
         <td><%= conf_room.sq_feet %></td>
@@ -47,6 +66,8 @@
     <% end %>
   </tbody>
 </table>
+
+
 
 <br>
 <center><%= link_to 'Add a new room', new_conf_room_path, class: 'btn btn-success' %></center>

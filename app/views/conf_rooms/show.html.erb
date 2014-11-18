@@ -11,14 +11,14 @@
 </p>
 
 <p>
-  <strong>Sq feet:</strong>
-  <%= @conf_room.sq_feet %>
-</p>
-
-<p>
   <strong>Description:</strong>
   <%= @conf_room.description %>
 </p>
+
+<p class="sq_feet" data-sqfootage="<%= @conf_room.sq_feet %>">
+  <button class="show">Click to show square footage</button>
+</p>
+
 
 <%= link_to 'Edit', edit_conf_room_path(@conf_room) %> |
 <%= link_to 'Back', conf_rooms_path %>

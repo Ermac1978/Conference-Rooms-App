@@ -14,3 +14,33 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).on('page:change', function() {
+  $(".table tr:even").css({'background-color': 'lightgreen'});
+});
+
+
+$(document).on('page:change', function() {
+  $("button").on("click", function(){
+    var sqfeet = $(this).closest(".sq_feet").data("sqfootage");
+    var message = $("<span>" + sqfeet + "sqft</span>");
+    $(this).closest(".sq_feet").append(message);
+    $(this).remove();
+  });
+});
+
+
+$(document).on('page:change', function() {
+  $(".nav").on("mouseenter", "a", function() {
+    $("li").find("span").slideToggle();
+  });
+});
+
+
+$(document).on('page:change', function() {
+  $("#rooms").on("click", "button", function() {
+//    $(this).closest("#rooms").find(".photos").slideToggle();
+      $(".photos").slideToggle();
+  });
+});
+
