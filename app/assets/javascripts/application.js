@@ -16,31 +16,39 @@
 //= require_tree .
 
 $(document).on('page:change', function() {
+
   $(".table tr:even").css({'background-color': 'lightgreen'});
-});
 
-
-$(document).on('page:change', function() {
-  $("button").on("click", function(){
+  $("button.show_feet").on("click", function() {
     var sqfeet = $(this).closest(".sq_feet").data("sqfootage");
     var message = $("<span>" + sqfeet + "sqft</span>");
     $(this).closest(".sq_feet").append(message);
     $(this).remove();
   });
-});
 
+  $('button').on('click', function() {
+      $(this).closest('#rooms').find('.photos').slideToggle();
+  });
 
-$(document).on('page:change', function() {
-  $(".nav").on("mouseenter", "a", function() {
-    $("li").find("span").slideToggle();
+  $(".home").on("mouseenter", "h1 span a", function(event) {
+    event.preventDefault();
+    $(this).text("Home");
+  });
+  $(".home").on("mouseleave", "h1 span a", function(event) {
+    event.preventDefault();
+  $(this).text("My Conference Rooms App");
+  });
+
+  $(".expand").on("mouseenter", function(event) {
+    event.preventDefault();
+    $(this).animate({
+        fontSize:'3em'
+    }, 300 );
+  });
+  $(".expand").on("mouseleave", function(event) {
+    event.preventDefault();
+    $(this).animate({
+        fontSize:'1em'
+    }, 300 );
   });
 });
-
-
-$(document).on('page:change', function() {
-  $("#rooms").on("click", "button", function() {
-//    $(this).closest("#rooms").find(".photos").slideToggle();
-      $(".photos").slideToggle();
-  });
-});
-

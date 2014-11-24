@@ -12,9 +12,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  conf_room_id: 
-  feature_id: 
+  conf_room: one
+  feature: one
 
 two:
-  conf_room_id: 
-  feature_id: 
+  conf_room: two
+  feature: two

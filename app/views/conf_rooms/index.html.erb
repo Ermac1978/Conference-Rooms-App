@@ -21,27 +21,17 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="room-info">
     <% @conf_rooms.each do |conf_room| %>
-      <tr id="rooms">
-        <td><%= image_tag conf_room.pic_url(:thumb) %>
-          <div id="rooms">
-              <button> Click here to see more photos </button>
-              <ul class="photos">
-                <li>
-                  <img src="/assets/1.jpg">
-                  <span>Arc de Triomphe</span>
-                </li>
-                <li>
-                  <img src="/assets/1.jpg">
-                  <span>The Eiffel Tower</span>
-                </li>
-                <li>
-                  <img src="/assets/1.jpg">
-                  <span>Notre Dame de Paris</span>
-                </li>
-              </ul>
-          </div>
+      <tr class="room-info2">
+        <td>
+          <ul id="rooms" class="list-unstyled">
+            <button class="glyphicon glyphicon-camera"></button>
+            <li class="photos">
+              <%= image_tag conf_room.pic_url(:thumb) %>
+            </li>
+          </ul>
+        </td>
         <td><%= conf_room.name %></td>
         <td><%= conf_room.location %></td>
         <td><%= conf_room.sq_feet %></td>
@@ -66,8 +56,6 @@
     <% end %>
   </tbody>
 </table>
-
-
 
 <br>
 <center><%= link_to 'Add a new room', new_conf_room_path, class: 'btn btn-success' %></center>

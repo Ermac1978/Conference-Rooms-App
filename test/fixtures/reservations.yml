@@ -20,9 +20,13 @@ one:
   ends_at: 2014-11-10 13:04:41
   notes: MyString
   event_title: MyString
+  user: one
+  conf_room: one
 
 two:
   starts_at: 2014-11-10 13:04:41
   ends_at: 2014-11-10 13:04:41
   notes: MyString
   event_title: MyString
+  user: two
+  conf_room: two

@@ -21,9 +21,15 @@ one:
   location: MyString
   sq_feet: 1
   description: MyString
+  pic: pic
+  campus: one
+  user: one
 
 two:
   name: MyString
   location: MyString
   sq_feet: 1
   description: MyString
+  pic: pic
+  campus: one
+  user: one

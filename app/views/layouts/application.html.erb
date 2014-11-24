@@ -10,6 +10,16 @@
 <body>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
+<% if signed_in? && current_user %>
+  <div class="home">
+    <h1>
+      <span><%=link_to "My Conference Rooms App", root_path %></span>
+    </h1>
+  </div>
+<% end %>
+<br>
+<br>
+
 <%= render 'layouts/nav_tabs' %>
 
 <%= render 'layouts/notices' %>

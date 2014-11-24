@@ -19,3 +19,14 @@ class UserTest < ActiveSupport::TestCase
   #   assert true
   # end
 end
+
+class UserTest < ActiveSupport::TestCase
+  test "User's exist" do
+    assert User.count > 0
+  end
+
+  test "First user's name is " do
+    assert_equal "First User", users(:user_first).name
+  end
+end
+
