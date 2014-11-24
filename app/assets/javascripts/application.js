@@ -15,40 +15,40 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).on('page:change', function() {
+//$(document).on('page:change', function() {
 
-  $(".table tr:even").css({'background-color': 'lightgreen'});
+//    $(".table tr:even").css({'background-color': 'lightgreen'});
 
-  $("button.show_feet").on("click", function() {
-    var sqfeet = $(this).closest(".sq_feet").data("sqfootage");
-    var message = $("<span>" + sqfeet + "sqft</span>");
-    $(this).closest(".sq_feet").append(message);
-    $(this).remove();
-  });
+//    $("button.show_feet").on("click", function() {
+//        var sqfeet = $(this).closest(".sq_feet").data("sqfootage");
+//        var message = $("<span>" + sqfeet + "sqft</span>");
+//        $(this).closest(".sq_feet").append(message);
+//        $(this).remove();
+//    });
 
-  $('button').on('click', function() {
-      $(this).closest('#rooms').find('.photos').slideToggle();
-  });
+//    $('button').on('click', function() {
+//        $(this).closest('#rooms').find('.photos').slideToggle();
+//    });
 
-  $(".home").on("mouseenter", "h1 span a", function(event) {
-    event.preventDefault();
-    $(this).text("Home");
-  });
-  $(".home").on("mouseleave", "h1 span a", function(event) {
-    event.preventDefault();
-  $(this).text("My Conference Rooms App");
-  });
+//    $(".home").on("mouseenter", "h1 span a", function(event) {
+//        event.preventDefault();
+//        $(this).text("Home");
+//    });
+//    $(".home").on("mouseleave", "h1 span a", function(event) {
+//        event.preventDefault();
+//        $(this).text("My Conference Rooms App");
+//    });
 
-  $(".expand").on("mouseenter", function(event) {
-    event.preventDefault();
-    $(this).animate({
-        fontSize:'3em'
-    }, 300 );
-  });
-  $(".expand").on("mouseleave", function(event) {
-    event.preventDefault();
-    $(this).animate({
-        fontSize:'1em'
-    }, 300 );
-  });
-});
+//    $(".expand").on("mouseenter", function(event) {
+//        event.preventDefault();
+//        $(this).animate({
+//            fontSize:'3em'
+//        }, 300 );
+//    });
+//    $(".expand").on("mouseleave", function(event) {
+//        event.preventDefault();
+//        $(this).animate({
+//            fontSize:'1em'
+//        }, 300 );
+//    });
+//});
