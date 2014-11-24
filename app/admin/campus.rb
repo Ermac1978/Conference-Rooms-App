@@ -16,5 +16,6 @@ ActiveAdmin.register Campus do
   #   permitted
   # end
 
+  permit_params :name, :city, :state, :phone_num, :zip_code, :street_add
 
 end

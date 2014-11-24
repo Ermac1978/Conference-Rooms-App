@@ -1,5 +1,5 @@
 class AddUserToConfRoom < ActiveRecord::Migration
   def change
-    add_reference :conf_rooms, :user, index: true
+    add_column :conf_rooms, :user, :reference
   end
 end

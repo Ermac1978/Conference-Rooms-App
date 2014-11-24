@@ -16,10 +16,6 @@ ActiveAdmin.register User do
   #   permitted
   # end
 
-
-
-
-
-
+  permit_params :name, :email, :password, :password_digest, :campus_id, :role
 
 end

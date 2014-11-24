@@ -14,5 +14,6 @@ ActiveAdmin.register Feature do
   #   permitted
   # end
 
+  permit_params :feat
 
 end

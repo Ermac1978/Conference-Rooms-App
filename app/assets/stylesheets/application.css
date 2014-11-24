@@ -15,4 +15,5 @@
  *= require signups
  *= require_self
  *= require conf_rooms
+ *= require users
  */

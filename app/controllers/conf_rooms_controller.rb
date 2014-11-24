@@ -10,7 +10,8 @@ class ConfRoomsController < ApplicationController
   # GET /conf_rooms
   # GET /conf_rooms.json
   def index
-    @conf_rooms = ConfRoom.for_user(current_user).order(@order_by)
+     @conf_rooms = current_user.campus.conf_rooms.order(@order_by)
+    # @conf_rooms = ConfRoom.for_user(current_user)
   end
 
   # GET /conf_rooms/1
@@ -73,7 +74,8 @@ class ConfRoomsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_conf_room
-      @conf_room = ConfRoom.for_user(current_user).find(params[:id])
+#     @conf_room = ConfRoom.for_user(current_user).find(params[:id])
+      @conf_room = current_user.campus.conf_rooms.find(params[:id])
     end
 
     def set_order_by

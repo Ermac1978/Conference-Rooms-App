@@ -11,7 +11,7 @@
 #  updated_at  :datetime
 #  pic         :string(255)
 #  campus_id   :integer
-#  user_id     :integer
+#  user        :reference
 #
 
 require 'test_helper'

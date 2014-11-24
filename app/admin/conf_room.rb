@@ -16,5 +16,5 @@ ActiveAdmin.register ConfRoom do
   #   permitted
   # end
 
-
+  permit_params :name, :location, :sq_feet, :description, :user_id, :pic, :campus_id, :remove_pic, :feature_ids => []
 end

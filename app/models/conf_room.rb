@@ -11,16 +11,18 @@
 #  updated_at  :datetime
 #  pic         :string(255)
 #  campus_id   :integer
-#  user_id     :integer
+#  user        :reference
 #
 
 class ConfRoom < ActiveRecord::Base
   validates :name, presence: true
   validates :campus_id, presence: true
 
-  belongs_to :user
+
   belongs_to :campus
+
   has_many :reservations
+
   has_many :conference_room_features
   has_many :features, through: :conference_room_features
 

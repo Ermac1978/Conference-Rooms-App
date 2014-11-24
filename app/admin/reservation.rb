@@ -14,5 +14,6 @@ ActiveAdmin.register Reservation do
   #   permitted
   # end
 
+  permit_params :starts_at, :ends_at, :notes, :event_title, :user_id, :conf_room_id
 
 end

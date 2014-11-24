@@ -15,9 +15,11 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  has_many :conf_rooms
-  has_many :reservations
   belongs_to :campus
+
+  has_many :reservations
+
+
 
   def staff?
     self.role == 'staff'

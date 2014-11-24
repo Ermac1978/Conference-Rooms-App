@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113220226) do
+ActiveRecord::Schema.define(version: 20141124220528) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -39,20 +39,8 @@ ActiveRecord::Schema.define(version: 20141113220226) do
     t.datetime "updated_at"
   end
 
-  create_table "conf_rooms", force: true do |t|
-    t.string   "name"
-    t.string   "location"
-    t.integer  "sq_feet"
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "pic"
-    t.integer  "campus_id"
-    t.integer  "user_id"
-  end
-
-  add_index "conf_rooms", ["campus_id"], name: "index_conf_rooms_on_campus_id"
-  add_index "conf_rooms", ["user_id"], name: "index_conf_rooms_on_user_id"
+# Could not dump table "conf_rooms" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "conference_room_features", force: true do |t|
     t.integer  "conf_room_id"
