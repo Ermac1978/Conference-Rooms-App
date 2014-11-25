@@ -1,8 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Index:</strong>
-  <%= @reservation.index %>
+  <strong>Starts at:</strong>
+  <%= @reservation.starts_at %>
+</p>
+
+<p>
+  <strong>Ends at:</strong>
+  <%= @reservation.ends_at %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @reservation.notes %>
+</p>
+
+<p>
+  <strong>Event title:</strong>
+  <%= @reservation.event_title %>
 </p>
 
 <%= link_to 'Edit', edit_reservation_path(@reservation) %> |

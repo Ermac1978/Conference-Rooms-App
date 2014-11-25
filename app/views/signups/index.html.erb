@@ -4,6 +4,7 @@
     <%= text_field_tag "email", nil, class: "form-control", placeholder: "Email" %>
     <%= text_field_tag "password", nil, class: "form-control", placeholder: "Password" %>
     <%= text_field_tag "password_confirmation", nil, class: "form-control", placeholder: "Password Confirmation" %>
+    <p>Choose your Campus: <%= select_tag :campus_id, options_from_collection_for_select(Campus.all, 'id', 'name')%></p>
     <div class="checkbox">
       <label>
         <input type="checkbox" value="remember-me"> Remember me

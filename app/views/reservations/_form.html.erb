@@ -11,33 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :index %><br>
-    <%= f.text_field :index %>
+  <div class="form-group">
+    <%= f.label :user_id %>
+    <!--<%% f.select :user_id, User.all.collect {|user| [user.name, user.id]}, class: 'form-control' %>-->
+    <%# f.select :user_id, , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :conf_room_id %>
+    <%= f.select :conf_room_id, current_user.campus.conf_rooms.collect {|conf_room| [conf_room.name, conf_room.id]}, class: 'form-control' %>
   </div>
   <div class="field">
-    <%= f.label :index %><br>
-    <%= f.text_field :index %>
+    <%= f.label :starts_at %><br>
+    <%= f.datetime_select :starts_at %>
   </div>
   <div class="field">
-    <%= f.label :index %><br>
-    <%= f.text_field :index %>
+    <%= f.label :ends_at %><br>
+    <%= f.datetime_select :ends_at %>
   </div>
   <div class="field">
-   <%= f.label :index %><br>
-   <%= f.text_field :index %>
+    <%= f.label :notes %><br>
+    <%= f.text_field :notes %>
   </div>
-
-
-
-
-
-
-
-
-
-
+  <div class="field">
+    <%= f.label :event_title %><br>
+    <%= f.text_field :event_title %>
+  </div>
   <div class="actions">
-<%= f.submit %>
+    <%= f.submit %>
   </div>
 <% end %>
