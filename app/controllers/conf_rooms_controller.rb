@@ -3,14 +3,15 @@ class ConfRoomsController < ApplicationController
   before_action :set_order_by, only: [:search, :index]
 
   def search
-    @conf_rooms = ConfRoom.for_user(current_user).where("description like ?", "%#{params[:search_query]}%").order(@order_by)
+#    @conf_rooms = ConfRoom.for_user(current_user).where("description like ?", "%#{params[:search_query]}%").order(@order_by)
+    @conf_rooms = current_user.campus.conf_rooms.where("description like ?", "%#{params[:search_query]}%").order(@order_by)
     render template: "conf_rooms/index"
   end
 
   # GET /conf_rooms
   # GET /conf_rooms.json
   def index
-     @conf_rooms = current_user.campus.conf_rooms.order(@order_by)
+    @conf_rooms = current_user.campus.conf_rooms.order(@order_by)
     # @conf_rooms = ConfRoom.for_user(current_user)
   end
 

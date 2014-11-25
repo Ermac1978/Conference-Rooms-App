@@ -15,7 +15,16 @@
 //= require turbolinks
 //= require_tree .
 
-//$(document).on('page:change', function() {
+$(document).on('page:change', function() {
+
+    function showButton() {
+        $(this).find("button.reserve").slideToggle();
+    }
+    $(".thumbnail").on("mouseenter", "img", showButton)
+                   .on("mouseleave", "img", showButton);
+
+});
+
 
 //    $(".table tr:even").css({'background-color': 'lightgreen'});
 
@@ -26,9 +35,7 @@
 //        $(this).remove();
 //    });
 
-//    $('button').on('click', function() {
-//        $(this).closest('#rooms').find('.photos').slideToggle();
-//    });
+
 
 //    $(".home").on("mouseenter", "h1 span a", function(event) {
 //        event.preventDefault();
@@ -51,4 +58,3 @@
 //            fontSize:'1em'
 //        }, 300 );
 //    });
-//});

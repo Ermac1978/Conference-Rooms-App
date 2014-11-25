@@ -1,64 +1,59 @@
-<h1>These are the Iron Yard Conference Rooms</h1>
+<center><h1><%= @current_user.name %>, here are the rooms at <%= @current_user.campus.name %></center>
 
-<h3>Search the Room Description here!</h3>
-<%= form_tag search_conf_rooms_path %>
-  <%= text_field_tag "search_query", nil, placeholder: "Search Text" %>
-  <%= submit_tag "Search", class: "btn btn-info" %><br>
-  <br>
-<%= button_to "Reset", conf_rooms_path, class: "btn btn-warning" %>
-
-
-<!--<table class="table table-striped table-hover">-->
-<table class="table">
-  <thead>
-    <tr>
-      <th>Picture</th>
-      <th><%= link_to 'Name', conf_rooms_path(order_by: 'name ASC') %></th>
-      <th><%= link_to 'Location', conf_rooms_path(order_by: 'location ASC') %></th>
-      <th><%= link_to 'Square Feet', conf_rooms_path(order_by: 'sq_feet ASC') %></th>
-      <th><%= link_to 'Description', conf_rooms_path(order_by: 'description ASC') %></th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody class="room-info">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h3>Campus Rooms</h3>
+    </div>
+  </div>
+  <!-- /.row -->
+  <!-- Page Features -->
+  <div class="row text-center">
     <% @conf_rooms.each do |conf_room| %>
-      <tr class="room-info2">
-        <td>
-          <ul id="rooms" class="list-unstyled">
-            <button class="glyphicon glyphicon-camera"></button>
-            <li class="photos">
-              <%= image_tag conf_room.pic_url(:thumb) %>
-            </li>
-          </ul>
-        </td>
-        <td><%= conf_room.name %></td>
-        <td><%= conf_room.location %></td>
-        <td><%= conf_room.sq_feet %></td>
-        <td><%= conf_room.description %></td>
-        <td><%= link_to new_feature_path do %>
-              <span class="glyphicon glyphicon-plus"></span> Add Features
-            <% end %>
-        </td>
-        <td><%= link_to conf_room do %>
-              <span class="glyphicon glyphicon-eye-open"></span> Show Rooms
-            <% end %>
-        </td>
-        <td><%= link_to edit_conf_room_path(conf_room) do %>
-              <span class="glyphicon glyphicon-edit"></span> Edit Rooms
-            <% end %>
-        </td>
-        <td><%= link_to conf_room, method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <span class="glyphicon glyphicon-remove"></span> Delete Rooms
-            <% end %>
-         </td>
-      </tr>
+        <div class="col-md-3 col-sm-6 hero-feature">
+          <div class="thumbnail">
+            <%= image_tag conf_room.pic_url %>
+
+            <div class="caption">
+              <h4><%= conf_room.name %></h4>
+              <h5><%= conf_room.description %></h5>
+              <p>
+                <%= button_to new_feature_path, method: :get, class: "btn btn-primary" do %>
+                    <span class="glyphicon glyphicon-plus"></span> Add Features
+                <% end %>
+              </p>
+              <p>
+                <%= button_to edit_conf_room_path(conf_room), method: :get, class: "btn btn-primary" do %>
+                    <span class="glyphicon glyphicon-edit"></span> Edit Rooms
+                <% end %>
+              </p>
+              <p>
+                <%= button_to conf_room, method: :get, class: "btn btn-primary" do %>
+                    <span class="glyphicon glyphicon-eye-open"></span> Show Rooms
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
-<br>
-<center><%= link_to 'Add a new room', new_conf_room_path, class: 'btn btn-success' %></center>
+  <!-- /.row -->
 
-<br>
-<center><%= link_to "Sign Out", signout_path, method: :delete, class: 'btn btn-danger' %></center>
+  <hr>
+
+
+  <%= button_to "Reservations", reservations_path,  method: :get %>
+
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="row">
+      <div class="col-lg-12">
+        <p>Copyright &copy; Ahmad Hutasuhut 2014</p>
+      </div>
+    </div>
+  </footer>
+</div>
