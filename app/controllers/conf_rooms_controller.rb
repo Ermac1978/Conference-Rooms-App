@@ -75,7 +75,7 @@ class ConfRoomsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_conf_room
-#     @conf_room = ConfRoom.for_user(current_user).find(params[:id])
+ #     @conf_room = ConfRoom.for_user(current_user).find(params[:id])
       @conf_room = current_user.campus.conf_rooms.find(params[:id])
     end
 

@@ -12,6 +12,7 @@
 #  pic         :string(255)
 #  campus_id   :integer
 #  user        :reference
+#  user_id     :integer
 #
 
 require 'test_helper'

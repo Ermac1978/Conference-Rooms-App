@@ -19,6 +19,32 @@
   <button class="show_feet">Click to show square footage</button>
 </p>
 
+<table class="table">
+  <h2>Current Reservations for this Room</h2>
+  <thead>
+  <tr>
+    <th> Starts At: </th>
+    <th> Ends At: </th>
+    <th> Notes: </th>
+    <th> Event Title: </th>
+    <th colspan="4"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <% if @conf_room.reservations.present? %>
+
+    <td> <%= @conf_room.reservations[0][:ends_at] %> </td>
+    <td> <%= @conf_room.reservations[0][:notes] %> </td>
+    <td> <%= @conf_room.reservations[0][:event_title] %> </td>
+    <% end %>
+  </tr>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_conf_room_path(@conf_room) %> |
 <%= link_to 'Back', conf_rooms_path %>
+
+
+

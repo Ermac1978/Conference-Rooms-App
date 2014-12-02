@@ -13,25 +13,37 @@
         <div class="col-md-3 col-sm-6 hero-feature">
           <div class="thumbnail">
             <%= image_tag conf_room.pic_url %>
-
             <div class="caption">
               <h4><%= conf_room.name %></h4>
               <h5><%= conf_room.description %></h5>
-              <p>
-                <%= button_to new_feature_path, method: :get, class: "btn btn-primary" do %>
+              <div class="buttons">
+                <p>
+                <%= link_to new_feature_path, class: "btn btn-primary slide" do %>
                     <span class="glyphicon glyphicon-plus"></span> Add Features
                 <% end %>
-              </p>
-              <p>
-                <%= button_to edit_conf_room_path(conf_room), method: :get, class: "btn btn-primary" do %>
+                </p>
+              </div>
+              <div class="buttons">
+                <p>
+                <%= link_to edit_conf_room_path(conf_room), class: "btn btn-primary slide" do %>
                     <span class="glyphicon glyphicon-edit"></span> Edit Rooms
                 <% end %>
-              </p>
-              <p>
-                <%= button_to conf_room, method: :get, class: "btn btn-primary" do %>
+                </p>
+              </div>
+              <div class="buttons">
+                <p>
+                <%= link_to conf_room, class: "btn btn-primary slide" do %>
                     <span class="glyphicon glyphicon-eye-open"></span> Show Rooms
                 <% end %>
-              </p>
+                </p>
+              </div>
+              <div class="buttons">
+                <p>
+                <%= link_to new_reservation_path, class: "btn btn-primary slide" do %>
+                    <span class="glyphicon glyphicon-plus-sign"></span> Reserve a Room
+                <% end %>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -42,11 +54,7 @@
 
   <hr>
 
-
-  <%= button_to "Reservations", reservations_path,  method: :get %>
-
-
-
+  <%= link_to "Reservations", reservations_path %>
 
   <!-- Footer -->
   <footer>

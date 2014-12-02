@@ -12,6 +12,7 @@
 #  pic         :string(255)
 #  campus_id   :integer
 #  user        :reference
+#  user_id     :integer
 #
 
 class ConfRoom < ActiveRecord::Base
@@ -20,6 +21,7 @@ class ConfRoom < ActiveRecord::Base
 
 
   belongs_to :campus
+
 
   has_many :reservations
 

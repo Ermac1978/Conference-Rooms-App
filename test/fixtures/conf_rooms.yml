@@ -12,6 +12,7 @@
 #  pic         :string(255)
 #  campus_id   :integer
 #  user        :reference
+#  user_id     :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

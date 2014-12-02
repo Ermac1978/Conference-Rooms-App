@@ -13,12 +13,11 @@
 
   <div class="form-group">
     <%= f.label :user_id %>
-    <!--<%% f.select :user_id, User.all.collect {|user| [user.name, user.id]}, class: 'form-control' %>-->
-    <%# f.select :user_id, , class: 'form-control' %>
+    <%=f.select :user_id, User.where('name = ?', current_user.name).collect {|user| [user.name, user.id]}, class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.label :conf_room_id %>
-    <%= f.select :conf_room_id, current_user.campus.conf_rooms.collect {|conf_room| [conf_room.name, conf_room.id]}, class: 'form-control' %>
+    <%= f.select :conf_room_id, current_user.campus.conf_rooms.where('campus_id = ?', current_user.campus_id).collect {|conf_room| [conf_room.name, conf_room.id]}, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :starts_at %><br>

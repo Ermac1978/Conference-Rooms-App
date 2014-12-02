@@ -17,14 +17,12 @@
 
 $(document).on('page:change', function() {
 
-    function showButton() {
-        $(this).find("button.reserve").slideToggle();
+    function showButtons() {
+        $(this).find(".slide").slideToggle();
     }
-    $(".thumbnail").on("mouseenter", "img", showButton)
-                   .on("mouseleave", "img", showButton);
-
+    $(".thumbnail").on("mouseenter", showButtons)
+                   .on("mouseleave", showButtons);
 });
-
 
 //    $(".table tr:even").css({'background-color': 'lightgreen'});
 
@@ -34,8 +32,6 @@ $(document).on('page:change', function() {
 //        $(this).closest(".sq_feet").append(message);
 //        $(this).remove();
 //    });
-
-
 
 //    $(".home").on("mouseenter", "h1 span a", function(event) {
 //        event.preventDefault();
